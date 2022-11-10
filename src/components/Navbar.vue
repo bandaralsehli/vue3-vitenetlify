@@ -1,5 +1,7 @@
 <template>
-    <div class="flex flex-row-reverse">
+
+
+    <div class="flex-auto">
       <div class="bg-gray-100">
         <nav
           class="
@@ -11,17 +13,7 @@
           "
         >
           <div class="flex items-center justify-between">
-            <router-link
-              to="/"
-              class="
-                text-xl
-                font-bold
-                text-gray-800
-                md:text-2xl
-                hover:text-blue-400
-              "
-              >Logo
-            </router-link>
+
             <!-- Mobile menu button -->
             <div @click="showMenu = !showMenu" class="flex md:hidden">
               <button
@@ -40,11 +32,14 @@
                 </svg>
               </button>
             </div>
+            <div class="inline-grid"><span class="w-5">hh</span><div class="w-20"> hi bandar</div></div>
+
+
           </div>
 
 
           <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-          <ul
+          <div
             :class="showMenu ? 'flex' : 'hidden'"
             class="
               flex-col
@@ -58,19 +53,21 @@
               md:mt-0
             "
           >
-            <li class="text-sm font-bold text-gray-800 hover:text-blue-400">
-              Home
-            </li>
-            <li class="text-sm font-bold text-gray-800 hover:text-blue-400">
-              About
-            </li>
-            <li class="text-sm font-bold text-gray-800 hover:text-blue-400">
-              Blogs
-            </li>
-            <li class="text-sm font-bold text-gray-800 hover:text-blue-400">
-              Contact Us
-            </li>
-          </ul>
+
+            <RouterLink to='/' class="ml-8 text-sm font-bold text-gray-800 hover:text-blue-400">
+            الرئيسية
+            </RouterLink>
+             <RouterLink  to='/about' class="text-sm font-bold text-gray-800 hover:text-blue-400">
+                 الدخول
+             </RouterLink>
+
+            <RouterLink  to='/' class="text-sm font-bold text-gray-800 hover:text-blue-400">
+              التسجيل
+            </RouterLink>
+            <RouterLink  to='/' class="text-sm font-bold text-gray-800 hover:text-blue-400">
+              التواصل
+            </RouterLink>
+        </div>
         </nav>
       </div>
     </div>
