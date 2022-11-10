@@ -1,0 +1,25 @@
+@import './base.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "Dsansarb";
+    src: url("/fonts/DroidSansArabic.ttf");
+  }
+
+
+html {
+	@apply font-Dsansarb;
+}
+
+.app-container {
+  min-height: 350px;
+}
+
+.btn-delete-user {
+  width: 40px;
+  text-align: center;
+  box-sizing: content-box;
+}
