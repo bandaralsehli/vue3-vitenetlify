@@ -1,22 +1,15 @@
 <script setup>
-import { RouterView } from 'vue-router';
-import Navbars from '@/components/Navbar.vue';
+import { RouterView } from "vue-router";
+import Navbar from "@/components/Nav-bar.vue";
+import Alertcomp from "@/components/Alert-comp.vue";
 
 </script>
 
 <template>
-
-
-<Navbars/>
-  <div><RouterLink to="/"> home by RouterLink</RouterLink></div>
-  <div><RouterLink to="/about"> about by RouterLink</RouterLink></div>
+   <Alertcomp />
+  <Navbar />
   <div>
-    <RouterView/>
+    <RouterView />
   </div>
-
-
-
-
-
 
 </template>

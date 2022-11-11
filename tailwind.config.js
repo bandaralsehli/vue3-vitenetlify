@@ -1,12 +1,13 @@
+/* eslint-env node */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./index.html",
-    'node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx}',
-    'node_modules/flowbite/**/*.{js,jsx,ts,tsx}',
+    "node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx}",
+    "node_modules/flowbite/**/*.{js,jsx,ts,tsx}",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -15,8 +16,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('prettier-plugin-tailwindcss'),
-    require('flowbite/plugin')
-  ],
-}
+  plugins: [require("prettier-plugin-tailwindcss"), require("flowbite/plugin")],
+};
