@@ -30,31 +30,32 @@
           :class="showMenu ? 'flex' : 'hidden'"
           class="mt-8 flex-col space-y-4 md:mt-0 md:flex md:flex-row md:items-center md:space-y-0 md:space-x-10"
         >
-          <RouterLink
+        <div class="hover:bg-blue-500"> <RouterLink
             to="/"
-            class="ml-8 text-sm font-bold text-gray-800 hover:text-blue-400"
+            class="mx-8 text-sm font-bold text-gray-800   "
           >
             الرئيسية
-          </RouterLink>
-          <RouterLink
+          </RouterLink></div>
+
+          <div class="hover:bg-blue-500">  <RouterLink
             to="/account/login"
-            class="text-sm font-bold text-gray-800 hover:text-blue-400"
+            class="mx-8 text-sm font-bold text-gray-800  "
           >
             الدخول
-          </RouterLink>
+          </RouterLink></div>
 
-          <RouterLink
+          <div class="hover:bg-blue-500">  <RouterLink
             to="/account/register"
-            class="text-sm font-bold text-gray-800 hover:text-blue-400"
+            class="mx-8 text-sm font-bold text-gray-800  "
           >
             التسجيل
-          </RouterLink>
-          <RouterLink
+          </RouterLink></div>
+          <div class="hover:bg-blue-500">  <RouterLink
             to="/about"
-            class="text-sm font-bold text-gray-800 hover:text-blue-400"
+            class="mx-8 text-sm font-bold text-gray-800  "
           >
             التواصل
-          </RouterLink>
+          </RouterLink></div>
         </div>
       </nav>
     </div>
@@ -64,7 +65,7 @@
 export default {
   data() {
     return {
-      showMenu: false,
+      showMenu: true,
     };
   },
 };
