@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import router from "@/router";
-import   {useAlertStore}   from '@/stores';
+import { useAlertStore } from "@/stores";
 
 export const useAuthStore = defineStore({
   id: "auth",
@@ -12,8 +12,9 @@ export const useAuthStore = defineStore({
   actions: {
     async login(username, password) {
       try {
+        // const fetvhurl = "https://parseapi.back4app.com/login?username=booshali&password=Bnd102030";
         const res = await fetch(
-          "https://parseapi.back4app.com/login?username=booshali&password=Bnd102030",
+          `https://parseapi.back4app.com/login?username=${username}&password=${password}`,
           {
             method: "Get",
             headers: {
@@ -26,22 +27,27 @@ export const useAuthStore = defineStore({
             },
           }
         );
-        const user_back4apps = await res.json();
-
-        console.table(user_back4apps);
-
-        // update pinia state
-        this.user = user_back4apps;
-        console.log(' 1 SEND TO HOME');
-        // store user details and jwt in local storage to keep user logged in between page refreshes
-        localStorage.setItem("user", JSON.stringify(user_back4apps));
-        console.log('2 SEND TO HOME');
-         const alertStore = useAlertStore();
-         alertStore.success('تم تسجيل الدخول بنجاح');
-
-        // redirect to previous url or default to home page
-        router.push("/about");
+        console.log(res.ok);
+        if (res.ok) {
+          const user_back4apps = await res.json();
+          console.table(user_back4apps);
+          // update pinia state
+          this.user = user_back4apps;
+          console.log(" 1 SEND TO HOME");
+          // store user details and jwt in local storage to keep user logged in between page refreshes
+          localStorage.setItem("user", JSON.stringify(user_back4apps));
+          console.log("2 SEND TO HOME");
+          const alertStore = useAlertStore();
+          alertStore.success("تم تسجيل الدخول بنجاح");
+          // redirect to previous url or default to home page
+          router.push("/about");
+        } else {
+          console.log("error user or passworf");
+          const alertStore = useAlertStore();
+          alertStore.error("error");
+        }
       } catch (error) {
+        console.log("catch error user or passworf");
         const alertStore = useAlertStore();
         alertStore.error(error);
       }
@@ -49,8 +55,8 @@ export const useAuthStore = defineStore({
     logout() {
       this.user = null;
       localStorage.removeItem("user");
-      console.log("removeItem");
-      router.replace({ path: '/' })
+      console.log("remove Item tokin");
+      router.replace({ path: "/" });
     },
   },
 });
