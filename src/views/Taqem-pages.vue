@@ -111,6 +111,7 @@ function handleChange(e) {
                         <option value="إدارة الأمن والسلامة" class="text-center">إدارة الأمن والسلامة</option>
                         <option value="الاتصالات الإدارية" class="text-center">الاتصالات الإدارية</option>
                         <option value="الثروة العقارية" class="text-center">الثروة العقارية</option>
+                        <option value="اخرى" class="text-center">اخرى</option>
                       </select>
                     </div>
                   </div>
