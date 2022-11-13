@@ -102,6 +102,138 @@ async function onSubmit(values) {
 
                     </div>
 
+                    <div class="mt-8 grid space-y-4">
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base"
+              >مستوى نظافة دورات المياة  ؟</label
+            >
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">ممتاز</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+
+                                <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">جيد</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">ضعيف</span>
+                            </div>
+                        </button>
+
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">اخرى</span>
+                            </div>
+                        </button>
+
+                    </div>
+
+                    <div class="mt-8 grid space-y-4">
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base"
+              >مستوى التكييف  ؟</label
+            >
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">ممتاز</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+
+                                <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">جيد</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">يعمل بشكل جزئي</span>
+                            </div>
+                        </button>
+
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">لا يعمل</span>
+                            </div>
+                        </button>
+
+                    </div>
+
+                    <div class="mt-8 grid space-y-4">
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base"
+              >مستوى السباكة  ؟</label
+            >
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">ممتاز</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+
+                                <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">جيد</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">ضعيف</span>
+                            </div>
+                        </button>
+
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">اخرى</span>
+                            </div>
+                        </button>
+
+                    </div>
+
+                    <div class="mt-8 grid space-y-4">
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base"
+              >مستوى الانارة  ؟</label
+            >
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">ممتاز</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+
+                                <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">جيد</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">ضعيف</span>
+                            </div>
+                        </button>
+
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">اخرى</span>
+                            </div>
+                        </button>
+
+                    </div>
+
                     <div
             class="block rounded-lg bg-gray-800 px-8 py-3 mt-20 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base"
           >
@@ -113,6 +245,8 @@ async function onSubmit(values) {
 
 
                 </div>
+
+
             </div>
         </div>
     </div>
