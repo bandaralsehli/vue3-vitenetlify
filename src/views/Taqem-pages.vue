@@ -66,7 +66,41 @@ async function onSubmit(values) {
       <div class="relative py-16 bg-gradient-to-br from-sky-50 to-gray-200">
     <div class="relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40">
         <div class="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
-            <div class="rounded-xl bg-white shadow-xl">
+          <div class="rounded-xl bg-white shadow-xl ">
+ <div class="p-6 sm:p-16">
+  <div class="mt-8 grid space-y-4">
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base"
+              >  الإدارة </label
+            >
+
+                        <select id="Section" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+
+        <option value="المدير العام">المدير العام</option>
+        <option value="القسم النسائي">القسم النسائي</option>
+        <option value="إدارة شؤون الموظفين">إدارة شؤون الموظفين</option>
+        <option value="إدارة المتابعة">إدارة المتابعة</option>
+        <option value="الإدارة الاقليمية للتقنية">الإدارة الاقليمية للتقنية</option>
+        <option value="إدارة الخدمات">إدارة الخدمات</option>
+        <option value="الإدارة المالية">الإدارة المالية</option>
+        <option value="قسم المستودع">قسم المستودع</option>
+        <option value="قسم الأجور والمباني">قسم الأجور والمباني</option>
+        <option value="مساعد المدير">مساعد المدير</option>
+        <option value="قسم التحقيقات">قسم التحقيقات</option>
+        <option value="إدارة الأمن والسلامة">إدارة الأمن والسلامة</option>
+        <option value=" الاتصالات الإدارية">الاتصالات الإدارية</option>
+        <option value=" الثروة العقارية">الثروة العقارية</option>
+    </select>
+
+
+
+
+                    </div>
+ </div>
+
+
+          </div>
+            <div class="rounded-xl bg-white shadow-xl ">
                 <div class="p-6 sm:p-16">
 
                     <div class="mt-8 grid space-y-4">
