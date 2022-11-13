@@ -46,7 +46,7 @@ async function onSubmit(values) {
 /*SECTION - Taqem pages
 
 <template>
-  <div class="my-7 mx-14  text-2xl">
+  <div class="my-7 text-2xl">
 
 
 
@@ -57,40 +57,53 @@ async function onSubmit(values) {
       >
         تقييم الإدارات التابعة للفرع
       </h4>
+
       <Form
-        class="mx-auto max-w-lg rounded-lg border"
+        class="mx-auto max-w-lg rounded-lg border "
         @submit="onSubmit"
         :validation-schema="schema"
-        v-slot="{ errors, isSubmitting }"
       >
-        <div class="flex flex-col gap-4 p-4 md:p-8">
-          <div>
-            <label class="mb-2 text-sm text-gray-800 sm:text-base"
+      <div class="relative py-16 bg-gradient-to-br from-sky-50 to-gray-200">
+    <div class="relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40">
+        <div class="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
+            <div class="rounded-xl bg-white shadow-xl">
+                <div class="p-6 sm:p-16">
+
+                    <div class="mt-8 grid space-y-4">
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base"
               >مستوى نظافة المكاتب ؟</label
             >
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">ممتاز</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
 
-  <div class="flex rounded-md shadow-sm mt-6" role="group">
-  <button type="button" class="py-2 px-4 text-sm w-40 font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-    ممتاز
-  </button>
-  <button type="button" class="py-2 px-4 text-sm w-40 font-medium text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-    جيد
-  </button>
-  <button type="button" class="py-2 px-4 text-sm  w-40 font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-    ضعيف
-  </button>
-  <button type="button" class="py-2 px-4 text-sm w-40 font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-    اخرى
-  </button>
-</div>
+                                <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">جيد</span>
+                            </div>
+                        </button>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">ضعيف</span>
+                            </div>
+                        </button>
 
- <div class="invalid-feedback">{{ errors.q1 }}</div>
-          </div>
+                        <button class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                                     hover:border-blue-400 focus:bg-blue-50 active:bg-blue-100">
+                            <div class="relative flex items-center space-x-4 justify-center">
+                                  <span class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-blue-600 sm:text-base">اخرى</span>
+                            </div>
+                        </button>
 
+                    </div>
 
-          <!-- <a class="text-red-600" v-if="catcherror">تسجيل دخول خاطئ، الرجاء التحقق من اسم المستخدم وكلمة المرور</a> -->
-          <div
-            class="block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base"
+                    <div
+            class="block rounded-lg bg-gray-800 px-8 py-3 mt-20 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base"
           >
             <button :disabled="isSubmitting">
               <!-- <span v-show="isSubmitting" class="spinner-border spinner-border-sm mr-1"></span> -->
@@ -98,10 +111,22 @@ async function onSubmit(values) {
             </button>
           </div>
 
+
+                </div>
+            </div>
         </div>
-      </Form>
+    </div>
+</div>
+
+</Form>
+
+
+
+
     </div>
   </div>
+
+
     <!-- <div class="container">
       <div
         class="items-top relative flex min-h-screen justify-center dark:bg-gray-900 sm:items-center sm:pt-0"
