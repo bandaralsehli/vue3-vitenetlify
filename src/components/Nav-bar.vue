@@ -49,6 +49,15 @@
             </RouterLink>
           </div>
 
+          <div class="hover:bg-blue-500">
+            <RouterLink
+              to="/taqem"
+              class="mx-8 text-sm font-bold text-gray-800"
+            >
+              التقييم
+            </RouterLink>
+          </div>
+
           <div class="hover:bg-blue-500" v-if="user">
             <RouterLink
               to="/dashboard"
