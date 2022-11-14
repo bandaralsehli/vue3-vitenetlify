@@ -30,7 +30,7 @@ const taqemStore = useTaqemStore();
 async function onSubmit() {
   // const {cc} = values;
   // console.log(cc);
-  if (localStorage.getItem("adria") === null && localStorage.getItem("q1") === null &&  localStorage.getItem("q2") === null &&  localStorage.getItem("q3") === null &&  localStorage.getItem("q4") === null &&  localStorage.getItem("q5") === null) {
+  if (localStorage.getItem("adria") == null && localStorage.getItem("q1") == null &&  localStorage.getItem("q2") == null &&  localStorage.getItem("q3") == null &&  localStorage.getItem("q4") == null &&  localStorage.getItem("q5") == null) {
     const alertStore = useAlertStore();
     alertStore.error("التاكد من الاختيار في جميع البنود");
 } else{
