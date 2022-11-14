@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home-pages.vue";
 import About from "@/views/About-pages.vue";
-import Endtageam from "@/views/About-pages.vue";
-import Taqem from "@/views/endtageam-pages.vue";
+import Endtageam from "@/views/endtageam-pages.vue";
+import Taqem from "@/views/Taqem-pages.vue";
 import accountRoutes from "./account.routes.js";
 import dashboardRoutes from "./dashboard.routes.js";
 const routes = [
-  { path: "/", name: "home", component: Home },
+  // { path: "/", name: "home", component: Home },
+  { path: "/", redirect: "/taqem" },
   { path: "/about", name: "about", component: About },
   { path: "/endtaqem", name: "endtaqem", component: Endtageam },
   { path: "/taqem", name: "taqem", component: Taqem },

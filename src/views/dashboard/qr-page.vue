@@ -454,15 +454,16 @@ async function onSubmit(values) {
     </div>
 
      <div class="container mx-20">
+
         <div class="row">
             <div class="col-sm-8 offset-sm-2 mt-5">
                 <div class="xl:pl-60 pt-14 min-h-screen w-screen transition-position lg:w-auto bg-gray-50 dark:bg-slate-800 dark:text-slate-100">
-                    url : https://aquamarine-cat-c6edf5.netlify.app/
+                    url :  https://aquamarine-cat-c6edf5.netlify.app/
                     <p>the QR is</p>
-                    <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app/" tag="img" :options="{ width: 200 }"></vue-qrcode>
-                    <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app" tag="img" :options="{ width: 200 }"></vue-qrcode>
-                    <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app" tag="svg" :options="{ width: 200 }"></vue-qrcode>
-                    <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app/" tag="svg" :options="{ width: 200 }"></vue-qrcode>
+                    <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app/" tag="img" :options="{ width: 300 ,height:300 }"></vue-qrcode>
+                    <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app" tag="img" :options="{ width: 300 ,height:300 }"></vue-qrcode>
+                    <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app" tag="svg" :options="{ width: 300 ,height:300 }"></vue-qrcode>
+                    <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app/" tag="svg" :options="{ width: 300 ,height:300 }"></vue-qrcode>
                 </div>
 
             </div>

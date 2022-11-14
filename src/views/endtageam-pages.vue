@@ -20,13 +20,15 @@
             class="overflow-hidden bg-white text-center shadow dark:bg-gray-800 sm:rounded-lg"
           >
             <div>
-              <div class="p-6">
-                <p>end taqeeeem</p>
+              <div class="p-2">
+
                 <div class="mx-2">
                   <div class="mt-2 text-base text-gray-600 dark:text-gray-400">
                     خاص بمتابعة عقود الصيانة والنظافة بجميع العقود التابعة
                     للشركة
                   </div>
+
+                   <p class="mt-5 font-semibold">شكراً على التقييم </p>
                 </div>
               </div>
             </div>
