@@ -50,7 +50,9 @@ export const useTaqemStore = defineStore({
           // console.table(responer);
           // const alertStore = useAlertStore();
           // alertStore.success("تم حفظ التقييم");
-          toaster.success("تم حفظ التقييم");
+         // toaster.success("تم حفظ التقييم");
+          const alertStore = useAlertStore();
+          alertStore.success("تم حفظ التقييم بنجاح");
           localStorage.removeItem("adria");
           localStorage.removeItem("q1");
           localStorage.removeItem("q2");

@@ -7,7 +7,7 @@
 
 import { createApp } from "vue";
 import { createPinia } from "pinia";
-
+import VueQrcode from '@chenfengyuan/vue-qrcode';
 
 import App from "./App.vue";
 // import {router} from "./router/index.js";
@@ -102,6 +102,7 @@ app.use(createPinia());
 app.use(router);
 app
   .component("font-awesome-icon", FontAwesomeIcon)
+  .component(VueQrcode.name, VueQrcode)
   .component("font-awesome-layers", FontAwesomeLayers)
   .component("font-awesome-layers-text", FontAwesomeLayersText);
 app.mount("#app");

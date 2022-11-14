@@ -10,13 +10,13 @@ const { alert } = storeToRefs(alertStore);
 <template>
   <div
     v-if="alert"
-    class="mb-4 rounded-lg bg-red-100 p-4 text-sm text-red-700 dark:bg-red-200 dark:text-red-800"
+    class="mb-4 rounded-lg bg-red-100 p-4 text-sm text-black dark:bg-red-200 dark:text-red-800 text-center"
     role="alert"
     :class="alert.type"
   >
     <button @click="alertStore.clear()" class="btn btn-link close">
       &times;
     </button>
-    i am commm alart {{ alert.message }}
+     <span class="text-center mx-10 font-bold text-base">{{ alert.message }}</span>
   </div>
 </template>

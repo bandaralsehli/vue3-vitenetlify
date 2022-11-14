@@ -28,6 +28,7 @@ import { useTaqemStore } from "@/stores";
 import { useAlertStore } from "@/stores";
 const taqemStore = useTaqemStore();
 async function onSubmit() {
+   console.log('the onSubmit is run ');
     if(taqemStore.cheeckes()){
       await taqemStore.send_data() ;
     }else{
@@ -103,6 +104,12 @@ function handleChange(e) {
             <div class="relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40">
               <div class="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
                 <div class="rounded-xl bg-white shadow-xl mb-6">
+
+
+
+
+
+
                   <div class="p-6 sm:p-16">
                     <div class="mt-8 grid space-y-4">
                       <label for="Section" class="mb-2 text-lg text-gray-800 sm:text-base"> الإدارة </label>
@@ -131,160 +138,160 @@ function handleChange(e) {
                   <div class="p-6 sm:p-16">
                     <div class="mt-8 grid space-y-4">
                       <label class=" mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة المكاتب ؟</label>
-                      <a href="#" @click="q1('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
- hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
+                      <button type="button"   @click="q1('ممتاز')" class=" group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+ hover:border-blue-400 focus:bg-blue-300 focus:text-white active active:bg-blue-800 target:bg-blue-800 active:text-yellow-500 ">
                         <div class="relative flex items-center space-x-4 justify-center my-3  ">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q1('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q1('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q1('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button"   @click="q1('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ضعيف</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q1('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button"   @click="q1('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">اخرى</span>
                         </div>
-                      </a>
+                      </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
                       <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة دورات المياة ؟</label>
-                      <a href="#" @click="q2('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button"   @click="q2('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q2('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button"  @click="q2('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q2('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button"   @click="q2('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ضعيف</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q2('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q2('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">اخرى</span>
                         </div>
-                      </a>
+                      </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
                       <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى التكييف ؟</label>
-                      <a href="#" @click="q3('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="q3('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q3('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q3('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q3('يعمل بشكل جزئي')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q3('يعمل بشكل جزئي')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">يعمل
                             بشكل جزئي</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q3('لا يعمل')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q3('لا يعمل')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">لا
                             يعمل</span>
                         </div>
-                      </a>
+                      </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
                       <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى السباكة ؟</label>
-                      <a href="#" @click="q4('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="q4('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q4('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button"  @click="q4('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q4('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q4('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ضعيف</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q4('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q4('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">اخرى</span>
                         </div>
-                      </a>
+                      </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
                       <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى الانارة ؟</label>
-                      <a href="#" @click="q5('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="q5('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q5('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q5('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q5('ضعيف')"  class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q5('ضعيف')"  class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ضعيف</span>
                         </div>
-                      </a>
-                      <a href="#" @click="q5('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      </button>
+                      <button type="button" @click="q5('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">اخرى</span>
                         </div>
-                      </a>
+                      </button>
                     </div>
                     <div
                       class="block rounded-lg bg-gray-800 px-8 py-3 mt-20 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base">
