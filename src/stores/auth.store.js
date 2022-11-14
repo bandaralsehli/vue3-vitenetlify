@@ -39,6 +39,7 @@ export const useAuthStore = defineStore({
           console.log("2 SEND TO HOME");
           const alertStore = useAlertStore();
           alertStore.success("تم تسجيل الدخول بنجاح");
+      
           // redirect to previous url or default to home page
           router.push("/about");
         } else {

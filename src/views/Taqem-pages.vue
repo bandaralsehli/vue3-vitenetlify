@@ -25,54 +25,71 @@
 <script setup>
 import { Form, Field } from "vee-validate";
 import { useTaqemStore } from "@/stores";
+import { useAlertStore } from "@/stores";
 const taqemStore = useTaqemStore();
-function onSubmit(values) {
-    const { q1 } = values;
-    console.log(q1);
-  // const authStore = useAuthStore();
-  // const { username, password } = values;
-  // await authStore.login(username, password);
+async function onSubmit() {
+  // const {cc} = values;
+  // console.log(cc);
+  if (localStorage.getItem("adria") === null && localStorage.getItem("q1") === null &&  localStorage.getItem("q2") === null &&  localStorage.getItem("q3") === null &&  localStorage.getItem("q4") === null &&  localStorage.getItem("q5") === null) {
+    const alertStore = useAlertStore();
+    alertStore.error("التاكد من الاختيار في جميع البنود");
+} else{
+    await taqemStore.send_data()
+  }
+
+
+
+
+ ;
 }
 
 function q1(values) {
-    console.log('q1 is ');
-    console.log(values);
+    // console.log('q1 is ');
+    // console.log(values);
+    //taqemStore.$state = { q1: values }
+   this.taqemStore.q1(values);
   // const authStore = useAuthStore();
   // const { username, password } = values;
   // await authStore.login(username, password);
 }
 function q2(values) {
-    console.log('q2 is ');
-    console.log(values);
+    // console.log('q2 is ');
+    // console.log(values);
+    this.taqemStore.q2(values);
   // const authStore = useAuthStore();
   // const { username, password } = values;
   // await authStore.login(username, password);
 }
 function q3(values) {
-    console.log('q3 is ');
-    console.log(values);
+    // console.log('q3 is ');
+    // console.log(values);
+    this.taqemStore.q3(values);
   // const authStore = useAuthStore();
   // const { username, password } = values;
   // await authStore.login(username, password);
 }
 function q4(values) {
-    console.log('q4 is ');
-    console.log(values);
+    // console.log('q4 is ');
+    // console.log(values);
+    this.taqemStore.q4(values);
   // const authStore = useAuthStore();
   // const { username, password } = values;
   // await authStore.login(username, password);
 }
 function q5(values) {
-    console.log('q5 is ');
-    console.log(values);
+    // console.log('q5 is ');
+    // console.log(values);
+    this.taqemStore.q5(values);
   // const authStore = useAuthStore();
   // const { username, password } = values;
   // await authStore.login(username, password);
 }
 
 function handleChange(e) {
-    console.log('mm is ');
-    console.log(e.target.value);
+    // console.log('mm is ');
+    // console.log(e.target.value);
+    const xx =e.target.value ;
+   taqemStore.handleChange(xx);
   // const authStore = useAuthStore();
   // const { username, password } = values;
   // await authStore.login(username, password);
@@ -95,7 +112,7 @@ function handleChange(e) {
                   <div class="p-6 sm:p-16">
                     <div class="mt-8 grid space-y-4">
                       <label for="Section" class="mb-2 text-lg text-gray-800 sm:text-base"> الإدارة </label>
-                      <select @change="handleChange" id="Section" name="Section" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <select @change="handleChange"  id="Section" name="Section" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <option value="المدير العام" class="text-center">المدير العام</option>
                         <option value="القسم النسائي" class="text-center">القسم النسائي</option>
@@ -121,7 +138,7 @@ function handleChange(e) {
                     <div class="mt-8 grid space-y-4">
                       <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة المكاتب ؟</label>
                       <a @click="q1('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
- hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
+ hover:border-blue-400 focus:bg-blue-800  focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3 ">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>

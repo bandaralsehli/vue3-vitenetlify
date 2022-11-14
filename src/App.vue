@@ -6,9 +6,11 @@ import router from "@/router";
 </script>
 
 <template>
-  <Alertcomp />
+
   <Navbar />
   <div>
     <RouterView />
+    <Alertcomp />
   </div>
+
 </template>
