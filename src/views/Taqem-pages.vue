@@ -69,7 +69,7 @@ function handleChange(e) {
                 <div class="rounded-xl bg-white shadow-xl ">
                   <div class="p-6 sm:p-16">
                     <div class="mt-8 grid space-y-4">
-                      <label class=" mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة المكاتب ؟</label> <span class="text-sm"> تم اختيار {{taqemStore.q1}}</span>
+                      <label class=" mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة المكاتب ؟</label> <span class="text-base" v-if="taqemStore.q1"> تم اختيار {{taqemStore.q1}}</span><span class="text-base text-red-600" v-else>لم يتم الاختيار</span>
                       <button type="button"   @click="taqemStore.setq1('ممتاز')" class=" group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active active:bg-blue-800 target:bg-blue-800 active:text-yellow-500 ">
                         <div class="relative flex items-center space-x-4 justify-center my-3  ">
@@ -100,7 +100,7 @@ function handleChange(e) {
                       </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
-                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة دورات المياة ؟</label> <span class="text-sm"> تم اختيار {{taqemStore.q2}}</span>
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة دورات المياة ؟</label> <span class="text-base" v-if="taqemStore.q2"> تم اختيار {{taqemStore.q2}}</span><span class="text-base text-red-600" v-else>لم يتم الاختيار</span>
                       <button type="button"   @click="taqemStore.setq2('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
@@ -131,7 +131,7 @@ function handleChange(e) {
                       </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
-                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى التكييف ؟</label> <span class="text-sm"> تم اختيار {{taqemStore.q3}}</span>
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى التكييف ؟</label> <span class="text-base" v-if="taqemStore.q3"> تم اختيار {{taqemStore.q3}}</span><span class="text-base text-red-600" v-else>لم يتم الاختيار</span>
                       <button type="button" @click="taqemStore.setq3('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
@@ -164,7 +164,7 @@ function handleChange(e) {
                       </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
-                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى السباكة ؟</label>  <span class="text-sm"> تم اختيار {{taqemStore.q4}}</span>
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى السباكة ؟</label>  <span class="text-base" v-if="taqemStore.q4"> تم اختيار {{taqemStore.q4}}</span><span class="text-base text-red-600" v-else>لم يتم الاختيار</span>
                       <button type="button" @click="taqemStore.setq4('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
@@ -195,7 +195,7 @@ function handleChange(e) {
                       </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
-                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى الانارة ؟</label>  <span class="text-base"> تم اختيار {{taqemStore.q5}}</span>
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى الانارة ؟</label> <span class="text-base" v-if="taqemStore.q5"> تم اختيار {{taqemStore.q5}}</span><span class="text-base text-red-600" v-else>لم يتم الاختيار</span>
                       <button type="button" @click="taqemStore.setq5('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">

@@ -52,10 +52,8 @@ export const useTaqemStore = defineStore({
           const alertStore = useAlertStore();
           alertStore.success("تم حفظ التقييم بنجاح");
           this.$reset();
+          router.push("/endtaqem");
 
-
-          router.push("/about");
-          //setTimeout(function(){router.push("/about")}, 150)
         } else {
           // console.log("error user or passworf");
           const alertStore = useAlertStore();
