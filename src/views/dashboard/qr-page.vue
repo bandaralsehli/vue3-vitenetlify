@@ -462,6 +462,7 @@ async function onSubmit(values) {
                     <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app/" tag="img" :options="{ width: 200 }"></vue-qrcode>
                     <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app" tag="img" :options="{ width: 200 }"></vue-qrcode>
                     <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app" tag="svg" :options="{ width: 200 }"></vue-qrcode>
+                    <vue-qrcode value="https://aquamarine-cat-c6edf5.netlify.app/" tag="svg" :options="{ width: 200 }"></vue-qrcode>
                 </div>
 
             </div>

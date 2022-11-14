@@ -7,8 +7,8 @@ import accountRoutes from "./account.routes.js";
 import dashboardRoutes from "./dashboard.routes.js";
 const routes = [
   { path: "/", name: "Home", component: Home },
-  { path: "/about", name: "about", component: About },
-  { path: "/taqem", name: "taqem", component: Taqem },
+  { path: "/about/", name: "about", component: About },
+  { path: "/taqem/", name: "taqem", component: Taqem },
   { ...accountRoutes },
   { ...dashboardRoutes },
   {
