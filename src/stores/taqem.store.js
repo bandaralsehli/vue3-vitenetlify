@@ -16,6 +16,7 @@ export const useTaqemStore = defineStore({
     q4:localStorage.getItem('q4'),
     q5:localStorage.getItem('q5'),
   }),
+
   actions: {
     async send_data() {
 
@@ -71,11 +72,12 @@ export const useTaqemStore = defineStore({
         alertStore.error("التاكد من الاختيار في جميع البنود");
       }
     },
-    logout() {
-      this.user = null;
-      localStorage.removeItem("user");
-      // console.log("remove Item tokin");
-      router.replace({ path: "/" });
+    cheeckes()  {
+      if(localStorage.getItem('adria')!=null &&  localStorage.getItem('q1')!=null  &&  localStorage.getItem('q2')!=null &&  localStorage.getItem('q3')!=null &&  localStorage.getItem('q4')!=null &&  localStorage.getItem('q5')!=null) {
+        return true
+      }else{
+        return false
+      }
     },
     q1(text) {
       localStorage.setItem("q1",text );
