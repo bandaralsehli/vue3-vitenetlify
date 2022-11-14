@@ -7,14 +7,12 @@ const toaster = createToaster({ /* options */ });
 export const useTaqemStore = defineStore({
   id: "taqem",
   state: () => ({
-    // initialize state from local storage to enable user to stay logged in
-    user: JSON.parse(localStorage.getItem("user")),
-    adria:localStorage.getItem('adria'),
-    q1:localStorage.getItem('q1'),
-    q2:localStorage.getItem('q2'),
-    q3:localStorage.getItem('q3'),
-    q4:localStorage.getItem('q4'),
-    q5:localStorage.getItem('q5'),
+   adria:'',
+    q1:'',
+    q2:'',
+    q3:'',
+    q4:'',
+    q5:'',
   }),
 
   actions: {
@@ -35,12 +33,12 @@ export const useTaqemStore = defineStore({
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              adria: localStorage.getItem('adria') ,
-              q1: localStorage.getItem('q1'),
-              q2: localStorage.getItem('q2'),
-              q3: localStorage.getItem('q3'),
-              q4: localStorage.getItem('q4'),
-              q5: localStorage.getItem('q5'),
+              adria: this.adria ,
+              q1: this.q1,
+              q2: this.q2,
+              q3: this.q3,
+              q4: this.q4,
+              q5: this.q5,
               other: " "})
           }
         );
@@ -53,12 +51,7 @@ export const useTaqemStore = defineStore({
          // toaster.success("تم حفظ التقييم");
           const alertStore = useAlertStore();
           alertStore.success("تم حفظ التقييم بنجاح");
-          localStorage.removeItem("adria");
-          localStorage.removeItem("q1");
-          localStorage.removeItem("q2");
-          localStorage.removeItem("q3");
-          localStorage.removeItem("q4");
-          localStorage.removeItem("q5");
+          this.$reset();
 
 
           router.push("/about");
@@ -66,50 +59,36 @@ export const useTaqemStore = defineStore({
         } else {
           // console.log("error user or passworf");
           const alertStore = useAlertStore();
-          alertStore.error("التاكد من الاختيار في جميع البنود");
+          alertStore.error("لم يتم حفظ التقييم");
         }
       } catch (error) {
         // console.log("catch error user or passworf");
         const alertStore = useAlertStore();
-        alertStore.error("التاكد من الاختيار في جميع البنود");
+        alertStore.error("تأكد من اتصالك بالشبكة");
       }
     },
-    cheeckes()  {
-      if(localStorage.getItem('adria')!=null &&  localStorage.getItem('q1')!=null  &&  localStorage.getItem('q2')!=null &&  localStorage.getItem('q3')!=null &&  localStorage.getItem('q4')!=null &&  localStorage.getItem('q5')!=null) {
-        return true
-      }else{
-        return false
-      }
+
+    setq1(param1) {
+      this.q1 = param1 ;
     },
-    q1(text) {
-      localStorage.setItem("q1",text );
-      // console.log('from pinin q1');
-      // console.log(localStorage.getItem('q1'));
+    setq2(param1) {
+      this.q2=param1 ;
+
     },
-    q2(text) {
-      localStorage.setItem("q2",text );
-      // console.log('from pinin q2');
-      // console.log(localStorage.getItem('q2'));
+    setq3(param1) {
+      this.q3=param1 ;
+
     },
-    q3(text) {
-      localStorage.setItem("q3",text );
-      // console.log('from pinin q3');
-      // console.log(localStorage.getItem('q3'));
+    setq4(param1) {
+      this.q4=param1 ;
+
     },
-    q4(text) {
-      localStorage.setItem("q4",text );
-      // console.log('from pinin q4');
-      // console.log(localStorage.getItem('q4'));
+    setq5(param1) {
+      this.q5=param1 ;
+
     },
-    q5(text) {
-      localStorage.setItem("q5",text );
-       // console.log('from pinin q5');
-      // console.log(localStorage.getItem('q5'));
-    },
-    handleChange(text) {
-      localStorage.setItem("adria",text );
-      // console.log('from pinin mm and adria');
-      // console.log(localStorage.getItem('adria'));
+    sethandleChange(param1) {
+      this.adria=param1 ;
     },
   },
 });

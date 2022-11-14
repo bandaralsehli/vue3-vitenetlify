@@ -1,93 +1,25 @@
-<!-- <template>
-  <h1 class="my-20 mx-20 text-center text-3xl">
-    معلومات عن الشركة والتواصل معها
-  </h1>
-    <div id="app">
-    <h1>Using Font Awesome "Brand" icons in Vue.js</h1>
-    <p>Have a phone call: <font-awesome-icon icon="phones" /></p>
-    <p>Have a module of JavaScript: <font-awesome-icon icon="js" /></p>
-    <p>Have a module of Vue.js: <font-awesome-icon icon="[ 'fab', 'vuejs' ]" size="4x" /></p>
-  </div>
-    <font-awesome-icon icon="wrench"  size="4x" />
-<font-awesome-icon icon="ambulance"  size="4x" />
-<font-awesome-icon icon="coffee"  size="4x" />
-<font-awesome-icon icon="spinner" size="4x" />
-  <font-awesome-icon :icon="['fab', 'instagram']" size="4x" />
-  <font-awesome-icon :icon="['fab', 'twitter']" size="4x" />
-  <font-awesome-icon :icon="['fab', 'vuejs']" rotation="270" size="4x" />
-    <div class='mt-20'>
-  <h1>Rotation</h1>
-<font-awesome-icon icon="spinner" rotation="270" size="4x"  />
-<font-awesome-icon :icon="[ 'fab', 'vuejs' ]" rotation="270" size="4x"  />
-<font-awesome-icon  icon='fab' size="4x"/>
-</div>
-</template> -->
+
 <script setup>
 import { Form, Field } from "vee-validate";
 import { useTaqemStore } from "@/stores";
 import { useAlertStore } from "@/stores";
 const taqemStore = useTaqemStore();
+
 async function onSubmit() {
-   console.log('the onSubmit is run ');
-    if(taqemStore.cheeckes()){
-      await taqemStore.send_data() ;
-    }else{
-      const alertStore = useAlertStore();
-        alertStore.error("التاكد من الاختيار في جميع البنود");
-    }
-
+  await taqemStore.send_data() ;
+  //  console.log('the onSubmit is run ');
+  //   if(taqemStore.cheeckes()){
+  //     await taqemStore.send_data() ;
+  //   }else{
+  //     const alertStore = useAlertStore();
+  //       alertStore.error("التاكد من الاختيار في جميع ");
+  //   }
 }
 
-function q1(values) {
-    // console.log('q1 is ');
-    // console.log(values);
-    //taqemStore.$state = { q1: values }
-   this.taqemStore.q1(values);
-  // const authStore = useAuthStore();
-  // const { username, password } = values;
-  // await authStore.login(username, password);
-}
-function q2(values) {
-    // console.log('q2 is ');
-    // console.log(values);
-    this.taqemStore.q2(values);
-  // const authStore = useAuthStore();
-  // const { username, password } = values;
-  // await authStore.login(username, password);
-}
-function q3(values) {
-    // console.log('q3 is ');
-    // console.log(values);
-    this.taqemStore.q3(values);
-  // const authStore = useAuthStore();
-  // const { username, password } = values;
-  // await authStore.login(username, password);
-}
-function q4(values) {
-    // console.log('q4 is ');
-    // console.log(values);
-    this.taqemStore.q4(values);
-  // const authStore = useAuthStore();
-  // const { username, password } = values;
-  // await authStore.login(username, password);
-}
-function q5(values) {
-    // console.log('q5 is ');
-    // console.log(values);
-    this.taqemStore.q5(values);
-  // const authStore = useAuthStore();
-  // const { username, password } = values;
-  // await authStore.login(username, password);
-}
 
 function handleChange(e) {
-    // console.log('mm is ');
-    // console.log(e.target.value);
     const xx =e.target.value ;
-   taqemStore.handleChange(xx);
-  // const authStore = useAuthStore();
-  // const { username, password } = values;
-  // await authStore.login(username, password);
+   taqemStore.sethandleChange(xx);
 }
 
 </script>
@@ -137,29 +69,29 @@ function handleChange(e) {
                 <div class="rounded-xl bg-white shadow-xl ">
                   <div class="p-6 sm:p-16">
                     <div class="mt-8 grid space-y-4">
-                      <label class=" mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة المكاتب ؟</label>
-                      <button type="button"   @click="q1('ممتاز')" class=" group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <label class=" mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة المكاتب ؟</label> <span class="text-sm"> تم اختيار {{taqemStore.q1}}</span>
+                      <button type="button"   @click="taqemStore.setq1('ممتاز')" class=" group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active active:bg-blue-800 target:bg-blue-800 active:text-yellow-500 ">
                         <div class="relative flex items-center space-x-4 justify-center my-3  ">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
                       </button>
-                      <button type="button" @click="q1('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq1('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
                       </button>
-                      <button type="button"   @click="q1('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button"   @click="taqemStore.setq1('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ضعيف</span>
                         </div>
                       </button>
-                      <button type="button"   @click="q1('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button"   @click="taqemStore.setq1('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
@@ -168,29 +100,29 @@ function handleChange(e) {
                       </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
-                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة دورات المياة ؟</label>
-                      <button type="button"   @click="q2('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى نظافة دورات المياة ؟</label> <span class="text-sm"> تم اختيار {{taqemStore.q2}}</span>
+                      <button type="button"   @click="taqemStore.setq2('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
                       </button>
-                      <button type="button"  @click="q2('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button"  @click="taqemStore.setq2('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
                       </button>
-                      <button type="button"   @click="q2('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button"   @click="taqemStore.setq2('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ضعيف</span>
                         </div>
                       </button>
-                      <button type="button" @click="q2('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq2('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
@@ -199,22 +131,22 @@ function handleChange(e) {
                       </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
-                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى التكييف ؟</label>
-                      <button type="button" @click="q3('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى التكييف ؟</label> <span class="text-sm"> تم اختيار {{taqemStore.q3}}</span>
+                      <button type="button" @click="taqemStore.setq3('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
                       </button>
-                      <button type="button" @click="q3('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq3('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
                       </button>
-                      <button type="button" @click="q3('يعمل بشكل جزئي')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq3('يعمل بشكل جزئي')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
@@ -222,7 +154,7 @@ function handleChange(e) {
                             بشكل جزئي</span>
                         </div>
                       </button>
-                      <button type="button" @click="q3('لا يعمل')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq3('لا يعمل')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
@@ -232,29 +164,29 @@ function handleChange(e) {
                       </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
-                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى السباكة ؟</label>
-                      <button type="button" @click="q4('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى السباكة ؟</label>  <span class="text-sm"> تم اختيار {{taqemStore.q4}}</span>
+                      <button type="button" @click="taqemStore.setq4('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
                       </button>
-                      <button type="button"  @click="q4('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button"  @click="taqemStore.setq4('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
                       </button>
-                      <button type="button" @click="q4('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq4('ضعيف')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ضعيف</span>
                         </div>
                       </button>
-                      <button type="button" @click="q4('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq4('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
@@ -263,29 +195,29 @@ function handleChange(e) {
                       </button>
                     </div>
                     <div class="mt-8 grid space-y-4">
-                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى الانارة ؟</label>
-                      <button type="button" @click="q5('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <label class="mb-2 text-lg text-gray-800 sm:text-base">مستوى الانارة ؟</label>  <span class="text-base"> تم اختيار {{taqemStore.q5}}</span>
+                      <button type="button" @click="taqemStore.setq5('ممتاز')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ممتاز</span>
                         </div>
                       </button>
-                      <button type="button" @click="q5('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq5('جيد')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
  hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">جيد</span>
                         </div>
                       </button>
-                      <button type="button" @click="q5('ضعيف')"  class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq5('ضعيف')"  class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
                             class="block w-max font-semibold tracking-wide text-gray-700 text-sm transition duration-300 group-hover:text-black sm:text-base">ضعيف</span>
                         </div>
                       </button>
-                      <button type="button" @click="q5('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
+                      <button type="button" @click="taqemStore.setq5('اخرى')" class="group h-12 px-6 border-2 border-gray-300 rounded-full transition duration-300
                                      hover:border-blue-400 focus:bg-blue-300 focus:text-white active:bg-blue-800">
                         <div class="relative flex items-center space-x-4 justify-center my-3">
                           <span
@@ -296,7 +228,14 @@ function handleChange(e) {
                     <div
                       class="block rounded-lg bg-gray-800 px-8 py-3 mt-20 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base">
                       <button :disabled="isSubmitting">
-                        <!-- <span v-show="isSubmitting" class="spinner-border spinner-border-sm mr-1"></span> -->
+
+                        <div v-show="isSubmitting" role="status">
+    <svg class="inline mr-2 w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+    </svg>
+    <span class="sr-only">Loading...</span>
+</div>
                         إرسال تقييم
                       </button>
                     </div>
