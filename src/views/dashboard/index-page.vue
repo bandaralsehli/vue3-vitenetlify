@@ -452,6 +452,7 @@ async function onSubmit(values) {
 
     </div>
     <section class="p-6 xl:max-w-6xl xl:mx-auto">
+      <div class="text-center"> <RouterLink to="/dashboard/QR" class="text-black"> QR</RouterLink></div>
        <!-- / start bage// /!SECTION the Overview-->
       <theOverview/>
 
@@ -777,6 +778,7 @@ async function onSubmit(values) {
         </div>
 
       </div> -->
+
       <section class="pt-6 mb-6 flex items-center justify-between">
         <div class="flex items-center justify-start"><span
             class="inline-flex justify-center items-center w-6 h-6 mr-2"><svg viewBox="0 0 24 24" width="20" height="20"
@@ -785,7 +787,10 @@ async function onSubmit(values) {
                 d="M16 17V19H2V17S2 13 9 13 16 17 16 17M12.5 7.5A3.5 3.5 0 1 0 9 11A3.5 3.5 0 0 0 12.5 7.5M15.94 13A5.32 5.32 0 0 1 18 17V19H22V17S22 13.37 15.94 13M15 4A3.39 3.39 0 0 0 13.07 4.59A5 5 0 0 1 13.07 10.41A3.39 3.39 0 0 0 15 11A3.5 3.5 0 0 0 15 4Z">
               </path>
             </svg></span>
+
           <h1 class="text-2xl leading-tight">الطلبات  الجديدة</h1>
+
+
         </div><button
           class="inline-flex justify-center items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-white dark:border-slate-900 ring-gray-200 dark:ring-gray-500 bg-white text-black dark:bg-slate-900 dark:text-white hover:bg-gray-100 hover:dark:bg-slate-800 p-1"
           type="button"><span class="inline-flex justify-center items-center w-6 h-6"><svg viewBox="0 0 24 24"
