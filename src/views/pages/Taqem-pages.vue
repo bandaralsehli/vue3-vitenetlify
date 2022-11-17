@@ -33,8 +33,10 @@ function handleChange(e) {
         </h4>
         <Form class="mx-auto max-w-lg rounded-lg border " @submit="onSubmit">
           <div class="relative py-16 bg-gradient-to-br from-sky-50 to-gray-200">
-            <div class="relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40">
-              <div class="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
+            <!-- <div class="relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40"> -->
+              <div class="px-6 text-gray-500">
+              <!-- <div class="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12"> -->
+                 <div>
                 <div class="rounded-xl bg-white shadow-xl mb-6">
 
 

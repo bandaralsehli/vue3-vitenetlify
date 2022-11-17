@@ -1,27 +1,38 @@
-<script setup>
-// import { useAuthStore } from "@/stores";
-// import router from "@/router";
+<script>
 
-// redirect home if already logged in
-// const authStore = useAuthStore();
-// if (authStore.user) {
-//   router.push("/");
-// }
+export default {
+  name: "admin-layout",
+  components: {
+    AdminNavbar,
+    Sidebar,
+    HeaderStats,
+    FooterAdmin,
+  },
+};
+
+
+
+import AdminNavbar from "@/components/Navbars/AdminNavbar.vue";
+import Sidebar from "@/components/Sidebar/Sidebar.vue";
+import HeaderStats from "@/components/Headers/HeaderStats.vue";
+import FooterAdmin from "@/components/Footers/FooterAdmin.vue";
+
 
 
 </script>
 
 <template>
+ <div>
+    <sidebar />
+    <div class="relative md:ml-64 bg-blueGray-100">
+      <admin-navbar />
 
+      <div class="px-4 md:px-10 mx-auto w-full -m-24">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 offset-sm-2 mt-5">
-        <RouterView />
+        <router-view />
+
+        <footer-admin />
       </div>
     </div>
   </div>
-
-
-
 </template>

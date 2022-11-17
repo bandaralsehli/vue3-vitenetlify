@@ -12,7 +12,7 @@
       >
         <div class="mx-auto max-w-6xl sm:px-6 lg:px-8">
           <div
-            class="mt-8 overflow-hidden bg-white shadow dark:bg-gray-800 sm:rounded-lg"
+            class="mt-2 overflow-hidden bg-white shadow dark:bg-gray-800 sm:rounded-lg"
           >
             <center><img src="@/assets/logom.png" /></center>
           </div>

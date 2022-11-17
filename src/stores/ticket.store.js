@@ -13,14 +13,14 @@ export const useTicketStore = defineStore({
 
   getters: {
     getTicketsPerAuthor: (state) => {
-      return (authorId) => state.ticket.filter((ticket) => ticket.userId === authorId)
+      return (state) => state.ticket.filter((ticket) => ticket.userId === authorId)
     },
-   
+
   },
 
   actions: {
     async fetchTickets() {
-      this.ticket = []
+
       this.loading = true
       try {
         this.ticket = await fetch('https://parseapi.back4app.com/classes/ticket',
@@ -36,6 +36,7 @@ export const useTicketStore = defineStore({
           },
         }
       ).then((response) => response.json())
+
       } catch (error) {
         this.error = error
       } finally {

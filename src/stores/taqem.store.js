@@ -13,6 +13,7 @@ export const useTaqemStore = defineStore({
     q3:'',
     q4:'',
     q5:'',
+    taqemes: [],
   }),
 
   actions: {
@@ -87,6 +88,32 @@ export const useTaqemStore = defineStore({
     },
     sethandleChange(param1) {
       this.adria=param1 ;
+    },
+
+
+    async fetchtaqemes() {
+
+      this.loading = true
+      try {
+        this.taqemes = await fetch('https://parseapi.back4app.com/classes/taqem',
+        {
+          method: "Get",
+          headers: {
+            accept: "application/json",
+            "X-Parse-Application-Id":
+              "faefaVxc667rBCJfBWerLVgwbN8ymX1S9CkceSjh",
+            "X-Parse-REST-API-Key":
+              "T0Ag23ExRe6UtCQb9KtD7mPFMjtatgWxhUwyZZRI",
+
+          },
+        }
+      ).then((response) => response.json())
+
+      } catch (error) {
+        this.error = error
+      } finally {
+        this.loading = false
+      }
     },
   },
 });
