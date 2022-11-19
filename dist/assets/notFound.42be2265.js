@@ -1,1 +1,0 @@
-import{_ as r,c as s,a as o,w as t,b as _,d as e,r as n,o as d}from"./index.46b743f0.js";const l={};function u(f,p){const a=n("H1"),c=n("RouterLink");return d(),s("div",null,[o(a,null,{default:t(()=>[e("not found")]),_:1}),_("p",null,[e("Oops , the pages not found "),o(c,{to:"/"},{default:t(()=>[e("Home")]),_:1})])])}var i=r(l,[["render",u]]);export{i as default};
