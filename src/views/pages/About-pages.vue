@@ -28,6 +28,7 @@
 /*SECTION - home bage
 
 <template>
+  <Navbar/>
   <div class="my-7 mx-14 text-center text-2xl">
     <!-- <h1>الصفحة الرئيسية للموقع</h1> -->
 
@@ -69,3 +70,7 @@
     </div>
   </div>
 </template>
+
+<script setup>
+ import Navbar from "@/components/Nav-bar.vue";
+</script>

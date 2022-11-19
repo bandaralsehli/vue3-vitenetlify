@@ -4,14 +4,12 @@
 import { RouterLink } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { useTicketStore } from '@/stores'
-
-//const { ticket, loading, error } = storeToRefs(useTicketStore())
-
 const theTicke = useTicketStore()
 theTicke.fetchTickets()
-
-
-// fetchTickets()
+theTicke.fetchTicketswherepros()
+theTicke.fetchTicketswhereend()
+theTicke.fetchTicketswheredelet()
+theTicke.fetchTicketswherenew()
 
 </script>
 
@@ -52,7 +50,7 @@ theTicke.fetchTickets()
                   <span class="inline-flex justify-center items-center w-4 h-4 mr-1"><svg viewBox="0 0 24 24" width="14"
                       height="14" class="inline-block">
                       <path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"></path>
-                    </svg></span><span>5 جديدة</span></div>
+                    </svg></span><span>{{theTicke.countnew}} جديدة</span></div>
               </div>
               <div class="flex items-center justify-center"><button
                   class="inline-flex justify-center items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-gray-100 dark:border-slate-800 ring-gray-200 dark:ring-gray-500 bg-gray-100 text-black dark:bg-slate-800 dark:text-white hover:bg-gray-200 hover:dark:bg-slate-700 p-1"
@@ -72,7 +70,7 @@ theTicke.fetchTickets()
                   <h3 class="text-lg leading-tight text-gray-500 dark:text-slate-400"></h3>
                   <h1 class="text-1xl leading-tight font-semibold">
                     <div>إجمالي الطلبات</div>
-                    <div class="text-center mt-3">{{theTicke.ticket.length}}</div>
+                    <div class="text-center mt-3">{{theTicke.countticket}}</div>
                   </h1>
                 </div>
               </div>
@@ -116,7 +114,7 @@ theTicke.fetchTickets()
                   <h3 class="text-lg leading-tight text-gray-500 dark:text-slate-400"></h3>
                   <h1 class="text-1xl leading-tight font-semibold">
                     <div>طلبات منتهية</div>
-                    <div class="text-center mt-3"> 20 </div>
+                    <div class="text-center mt-3"> {{theTicke.countend}} </div>
                   </h1>
                 </div>
               </div>
@@ -161,7 +159,52 @@ theTicke.fetchTickets()
                 <div>
                   <h3 class="text-lg leading-tight text-gray-500 dark:text-slate-400">طلبات تحت الصيانة</h3>
                   <h1 class="text-1xl leading-tight font-semibold">
-                    <div class="text-center mt-3">10</div>
+                    <div class="text-center mt-3">{{theTicke.countpros}}</div>
+                  </h1>
+                </div>
+              </div>
+              <div class="flex items-center justify-center"><span
+                  class="inline-flex justify-center items-center  h-16 text-red-500"><svg viewBox="0 0 24 24" width="48"
+                    height="48" class="inline-block">
+                    <path fill="currentColor"
+                      d="M3,14L3.5,14.07L8.07,9.5C7.89,8.85 8.06,8.11 8.59,7.59C9.37,6.8 10.63,6.8 11.41,7.59C11.94,8.11 12.11,8.85 11.93,9.5L14.5,12.07L15,12C15.18,12 15.35,12 15.5,12.07L19.07,8.5C19,8.35 19,8.18 19,8A2,2 0 0,1 21,6A2,2 0 0,1 23,8A2,2 0 0,1 21,10C20.82,10 20.65,10 20.5,9.93L16.93,13.5C17,13.65 17,13.82 17,14A2,2 0 0,1 15,16A2,2 0 0,1 13,14L13.07,13.5L10.5,10.93C10.18,11 9.82,11 9.5,10.93L4.93,15.5L5,16A2,2 0 0,1 3,18A2,2 0 0,1 1,16A2,2 0 0,1 3,14Z">
+                    </path>
+                  </svg></span></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="rounded-2xl flex-col dark:bg-slate-900/70 bg-white flex">
+          <div class="flex-1 p-6">
+            <div class="justify-between items-center flex mb-3">
+              <div class="flex items-center justify-center">
+                <div
+                  class="inline-flex items-center capitalize leading-none text-xs border rounded-full py-1 px-3 bg-yellow-500 border-yellow-500 text-white">
+                  <span class="inline-flex justify-center items-center w-4 h-4 mr-1"><svg viewBox="0 0 24 24" width="14"
+                      height="14" class="inline-block">
+                      <path fill="currentColor"
+                        d="M11,15H13V17H11V15M11,7H13V13H11V7M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z">
+                      </path>
+                    </svg></span><span>2 طلبات عاجلة</span></div>
+              </div>
+              <div class="flex items-center justify-center"><button
+                  class="inline-flex justify-center items-center whitespace-nowrap focus:outline-none transition-colors focus:ring duration-150 border cursor-pointer rounded border-gray-100 dark:border-slate-800 ring-gray-200 dark:ring-gray-500 bg-gray-100 text-black dark:bg-slate-800 dark:text-white hover:bg-gray-200 hover:dark:bg-slate-700 p-1"
+                  type="button" icon-w="w-4" icon-h="h-4"><span
+                    class="inline-flex justify-center items-center w-6 h-6"><svg viewBox="0 0 24 24" width="16"
+                      height="16" class="inline-block">
+                      <path fill="currentColor"
+                        d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z">
+                      </path>
+                    </svg></span>
+
+                </button></div>
+            </div>
+            <div class="justify-between items-center flex">
+              <div class="flex items-center justify-center">
+                <div>
+                  <h3 class="text-lg leading-tight text-gray-500 dark:text-slate-400">طلبات تم الغائها</h3>
+                  <h1 class="text-1xl leading-tight font-semibold">
+                    <div class="text-center mt-3">{{theTicke.countdel}}</div>
                   </h1>
                 </div>
               </div>

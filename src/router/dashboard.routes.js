@@ -2,6 +2,7 @@ import { Layout, Index ,QR } from "@/views/dashboard";
 
 export default {
   path: "/dashboard",
+  name: "dashboard",
   component: Layout,
   children: [
     { path: "", redirect: "/dashboard/index" },

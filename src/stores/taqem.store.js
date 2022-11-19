@@ -13,8 +13,10 @@ export const useTaqemStore = defineStore({
     q3:'',
     q4:'',
     q5:'',
+    Idorder:'',
     taqemes: [],
   }),
+
 
   actions: {
     async send_data() {
@@ -40,20 +42,17 @@ export const useTaqemStore = defineStore({
               q3: this.q3,
               q4: this.q4,
               q5: this.q5,
-              other: " "})
+              Idorder: this.Idorder + 1,
+              other: ''             })
           }
         );
         // console.log(res.ok);
         if (res.ok) {
-          const responer = await res.json();
-          // console.table(responer);
-          // const alertStore = useAlertStore();
-          // alertStore.success("تم حفظ التقييم");
-         // toaster.success("تم حفظ التقييم");
+          router.push("/all");
           const alertStore = useAlertStore();
           alertStore.success("تم حفظ التقييم بنجاح");
           this.$reset();
-          router.push("/endtaqem");
+
 
         } else {
           // console.log("error user or passworf");
@@ -90,6 +89,11 @@ export const useTaqemStore = defineStore({
       this.adria=param1 ;
     },
 
+    otherGetter(state) {
+      this.Idorder=state.taqemes.results.length + 1 ;
+      return state.taqemes.results.length;
+    },
+
 
     async fetchtaqemes() {
 
@@ -108,6 +112,31 @@ export const useTaqemStore = defineStore({
           },
         }
       ).then((response) => response.json())
+
+      } catch (error) {
+        this.error = error
+      } finally {
+        this.loading = false
+      }
+    },
+
+    async fetchtall() {
+
+      this.loading = true
+      try {
+        this.Idorder = await fetch('https://parseapi.back4app.com/classes/taqem',
+        {
+          method: "Get",
+          headers: {
+            accept: "application/json",
+            "X-Parse-Application-Id":
+              "faefaVxc667rBCJfBWerLVgwbN8ymX1S9CkceSjh",
+            "X-Parse-REST-API-Key":
+              "T0Ag23ExRe6UtCQb9KtD7mPFMjtatgWxhUwyZZRI",
+
+          },
+        }
+      ).then((response) => response.json()).then((data)=>data.results.length)
 
       } catch (error) {
         this.error = error

@@ -1,5 +1,7 @@
 <template>
-  <div class="flex-auto">
+
+  <!-- <div class="flex-auto" v-if="this.$route.name!=='/dashboard/' || this.$route.name!=='/QR/'"> -->
+    <div class="flex-auto">
     <div class="bg-gray-100">
       <nav
         class="container mx-auto px-6 py-4 md:flex md:items-center md:justify-between"
@@ -72,7 +74,7 @@
               to="/about"
               class="mx-8 text-sm font-bold text-gray-800"
             >
-              التواصل
+              التواصل   {{this.$route.path}}
             </RouterLink>
           </div>
         </div>
@@ -81,11 +83,11 @@
   </div>
 </template>
 <script setup>
-import { useAuthStore } from "@/stores";
+import { useAuthStore , useAdminshowStore  } from "@/stores";
 import { storeToRefs } from "pinia";
 const { user } = storeToRefs(useAuthStore());
-
-
+// const aa = useAdminshowStore();
+// aa.cheekurl(self.$route.path);
 function onSubmit() {
   const authStore = useAuthStore();
   authStore.logout();

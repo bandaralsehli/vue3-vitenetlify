@@ -11,7 +11,7 @@ import router from "@/router";
 <template>
 
     <!-- <Navbar  v-show="$route.name!=='/account/login'" /> -->
-    <Navbar/>
+    <!-- <Navbar/> -->
 
   <div>
 

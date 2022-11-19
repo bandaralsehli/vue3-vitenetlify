@@ -1,19 +1,15 @@
 
 <script setup>
+import Navbar from "@/components/Nav-bar.vue";
 import { Form, Field } from "vee-validate";
 import { useTaqemStore } from "@/stores";
 import { useAlertStore } from "@/stores";
 const taqemStore = useTaqemStore();
+taqemStore.fetchtall();
+
 
 async function onSubmit() {
   await taqemStore.send_data() ;
-  //  console.log('the onSubmit is run ');
-  //   if(taqemStore.cheeckes()){
-  //     await taqemStore.send_data() ;
-  //   }else{
-  //     const alertStore = useAlertStore();
-  //       alertStore.error("التاكد من الاختيار في جميع ");
-  //   }
 }
 
 
@@ -25,6 +21,7 @@ function handleChange(e) {
 </script>
 /*SECTION - Taqem pages
 <template>
+  <Navbar/>
   <div class="my-7 text-2xl">
     <div class="bg-white py-6 sm:py-8 lg:py-12">
       <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
